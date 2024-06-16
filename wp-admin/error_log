@@ -1,0 +1,1 @@
+[16-Jun-2024 18:20:11 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 1052672 bytes) in /home/hioxtraining/public_html/aniimalmerch.in/wp-includes/SimplePie/Parser.php on line 175
