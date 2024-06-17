@@ -23,8 +23,8 @@ wordpress:
   wordpressEmail: admin@example.com
   wordpressBlogName: "My Blog"
   service:
-    type: LoadBalancer
-    port: 80
+    type: NodePort
+    nodePort: 30090
   ingress:
     enabled: false
   persistence:
@@ -38,8 +38,8 @@ nginx:
     repository: gowthamsharoon/nginx
     tag: latest
   service:
-    type: LoadBalancer
-    port: 80
+    type: NodePort
+    nodePort: 30080
   ingress:
     enabled: false
   config:
