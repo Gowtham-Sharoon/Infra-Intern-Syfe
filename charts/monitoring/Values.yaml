@@ -1,0 +1,10 @@
+prometheus:
+  image:
+    repository: prom/prometheus
+    tag: latest
+
+grafana:
+  image:
+    repository: grafana/grafana
+    tag: latest
+

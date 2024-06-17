@@ -1,0 +1,54 @@
+mysql:
+  image:
+    repository: gowthamsharoon/mysql
+    tag: latest
+  rootPassword: "root_password"
+  database: "hioxtraining_wp109"
+  user: "hioxtraining_wp109"
+  password: "r0EOt(3-3!S-bpU)"
+  service:
+    port: 3306
+  persistence:
+    enabled: true
+    storageClass: ""
+    accessMode: ReadWriteOnce
+    size: 10Gi
+
+wordpress:
+  image:
+    repository: gowthamsharoon/wordpress
+    tag: latest
+  wordpressUsername: admin
+  wordpressPassword: admin_password
+  wordpressEmail: admin@example.com
+  wordpressBlogName: "My Blog"
+  service:
+    type: LoadBalancer
+    port: 80
+  ingress:
+    enabled: false
+  persistence:
+    enabled: true
+    storageClass: ""
+    accessMode: ReadWriteMany
+    size: 10Gi
+
+nginx:
+  image:
+    repository: gowthamsharoon/nginx
+    tag: latest
+  service:
+    type: LoadBalancer
+    port: 80
+  ingress:
+    enabled: false
+  config:
+    luaScript: |
+      -- example.lua
+      ngx.say("Hello, OpenResty with Lua!")
+  persistence:
+    enabled: true
+    storageClass: ""
+    accessMode: ReadWriteMany
+    size: 10Gi
+
