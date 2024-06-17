@@ -1,43 +1,43 @@
-Infra-Intern-Syfe/
-├── charts/
-│ ├── wordpress/
-│ │ ├── templates/
+**Infra-Intern-Syfe**/
+├── **charts**/
+│ ├── **wordpress**/
+│ │ ├── **templates**/
 | | | ├──deployment.yaml
 | | | ├──service.yaml
 │ │ ├── Chart.yaml
 │ │ ├── values.yaml
-│ ├── monitoring/
-│ │ ├── templates/
+│ ├── **monitoring**/
+│ │ ├── **templates**/
 | | | ├──deployment.yaml
 | | | ├──service.yaml
 │ │ ├── Chart.yaml
 │ │ ├── values.yaml
-│ ├── nginx/
-│ │ ├── templates/
+│ ├── **nginx**/
+│ │ ├── **templates**/
 | | | ├──configmap.yaml
 | | | ├──deployment.yaml
 | | | ├──_helpers.tpl
 | | | ├──service.yaml
 │ │ ├── Chart.yaml
 │ │ ├── values.yaml
-├── dockerfiles/
-│ ├── wordpress/
+├── **dockerfiles**/
+│ ├── **wordpress**/
 │ │ ├── Dockerfile
 │ │ ├── wp-config.php
-│ ├── mysql/
+│ ├── **mysql**/
 │ │ ├── Dockerfile
 │ │ ├── init.sql
-│ ├── nginx/
+│ ├── **nginx**/
 │ │ ├── Dockerfile
 │ │ ├── nginx.conf
-│ │ ├── lua-scripts/
+│ │ ├── **lua-scripts**/
 │ │ ├── example.lua
-├── manifests/
+├── **manifests**/
 │ ├── pv.yaml
 │ ├── pvc.yaml
-├── sql/
+├── **sql**/
 │ ├── init.sql
-├── wordpress-files/
+├── **wordpress-files**/
 │ ├── wp-content/
 │ │ ├── plugins/
 │ │ ├── themes/
