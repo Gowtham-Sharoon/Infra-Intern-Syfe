@@ -37,4 +37,3 @@ spec:
           image: {{ .Values.grafana.image.repository }}:{{ .Values.grafana.image.tag }}
           ports:
             - containerPort: 3000
-

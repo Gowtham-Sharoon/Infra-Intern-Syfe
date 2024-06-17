@@ -1,47 +1,13 @@
-replicaCount: 1
-
 image:
   repository: gowthamsharoon/nginx
   tag: latest
-  pullPolicy: IfNotPresent
-
 service:
   type: NodePort
   port: 80
   nodePort: 30080
-
 persistence:
   enabled: true
   storageClass: ""
   accessMode: ReadWriteMany
   size: 10Gi
-
-configMap:
-  nginx.conf: |
-    worker_processes  1;
-    events {
-        worker_connections  1024;
-    }
-    http {
-        include       mime.types;
-        default_type  application/octet-stream;
-        sendfile        on;
-        keepalive_timeout  65;
-
-        server {
-            listen       80;
-            server_name  localhost;
-
-            location / {
-                root   html;
-                index  index.html index.htm;
-                proxy_pass http://wordpress;
-            }
-
-            error_page   500 502 503 504  /50x.html;
-            location = /50x.html {
-                root   html;
-            }
-        }
-    }
 

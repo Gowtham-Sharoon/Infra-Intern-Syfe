@@ -7,7 +7,20 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: "/mnt/data"
+  nfs:
+    path: /export/wp-data
+    server: nfs-server.example.com
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /export/mysql-data
+    server: nfs-server.example.com
 

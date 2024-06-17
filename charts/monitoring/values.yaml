@@ -16,4 +16,3 @@ grafana:
     type: ClusterIP
     port: 3000
   adminPassword: "admin"
-
