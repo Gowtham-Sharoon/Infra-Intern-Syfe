@@ -38,7 +38,7 @@ nginx:
     repository: gowthamsharoon/nginx
     tag: latest
   service:
-    type: LoadBalancer
+    type: NodePort
     port: 80
   ingress:
     enabled: false

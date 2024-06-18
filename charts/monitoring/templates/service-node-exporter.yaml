@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: node-exporter
 spec:
-  type: {{ .Values.nodeExporter.service.type }}
+  type: LoadBalancer
   selector:
     app: node-exporter
   ports:
-    - port: {{ .Values.nodeExporter.service.port }}
+    - port: 9100
       targetPort: 9100
-

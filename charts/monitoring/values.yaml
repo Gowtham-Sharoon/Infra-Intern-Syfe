@@ -22,7 +22,7 @@ grafana:
     repository: grafana/grafana
     tag: latest
   service:
-    type: LoadBalancer
+    type: NodePort
     port: 3000
 
 nodeExporter:
@@ -30,6 +30,6 @@ nodeExporter:
     repository: prom/node-exporter
     tag: latest
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 9100
 
