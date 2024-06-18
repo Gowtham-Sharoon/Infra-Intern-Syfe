@@ -2,17 +2,34 @@ prometheus:
   image:
     repository: prom/prometheus
     tag: latest
-    pullPolicy: IfNotPresent
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 9090
+  config:
+    prometheus.yml: |
+      global:
+        scrape_interval: 15s
+      scrape_configs:
+        - job_name: 'prometheus'
+          static_configs:
+            - targets: ['localhost:9090']
+        - job_name: 'node-exporter'
+          static_configs:
+            - targets: ['node-exporter:9100']
 
 grafana:
   image:
     repository: grafana/grafana
     tag: latest
-    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 3000
+
+nodeExporter:
+  image:
+    repository: prom/node-exporter
+    tag: latest
   service:
     type: ClusterIP
-    port: 3000
-  adminPassword: "admin"
+    port: 9100
+
