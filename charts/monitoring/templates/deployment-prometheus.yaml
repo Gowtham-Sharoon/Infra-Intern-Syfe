@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: prometheus
-          image: {{ .Values.prometheus.image.repository }}:{{ .Values.prometheus.image.tag }}
+          image: prom/prometheus:latest
           ports:
             - containerPort: 9090
           volumeMounts:
             - name: config-volume
-              mountPath: /etc/prometheus/prometheus.yml
+              mountPath: /etc/prometheus/
               subPath: prometheus.yml
       volumes:
         - name: config-volume
