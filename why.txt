@@ -1,0 +1,25 @@
+Why monitoring?
+
+If there are multiple teams invloss in a k8s cluster, if nything went wrong, it needs to be monitored & looked into it.. 
+prometheus is a complete opensource, 
+
+grafana is for visualization, grafana have more data source to connect, one among them was prometheus. The node exporter helps to share the data from 
+
+Prometheus server have API server, 
+
+Kubernetes inbuild api server expose various metrics about the cluster, Those metrices will be fetched by prometheus and it stored in a TSDB (Time Series Database).
+
+The fetched metrices will stored in the SSD/HDD storage. Then the stored metrices will be pushed to slake, email, etc based on the requirments
+
+These metrices are sent from prometheus to alertmanager via push alerts and notify us on slake, gmeet, and multiple platformes. PromQL can also get from the prometheus URL, 
+
+
+MiniKube 
+
+minikube start --memory=4089 --driver=hyperkiti
+
+
+
+
+;wq
+
